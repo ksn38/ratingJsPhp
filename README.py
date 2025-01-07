@@ -23,7 +23,7 @@ def csv_df(mypath):
     mean.drop('tag', axis=0, inplace=True)
     mean.sort_index(inplace=True)
     mean_begin = mean.iloc[:12].mean()
-    mean_end = mean.iloc[-6:].mean()
+    mean_end = mean.iloc[-5:].mean()
     change = ((mean_end - mean_begin)*100/mean_begin)
     change = change.dropna()
     change = change.astype('int64')

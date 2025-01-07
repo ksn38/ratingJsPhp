@@ -91,6 +91,8 @@ for file in files:
         i = re.sub(r'\send', '_end', i)
         i = re.sub(r'\sStack', '_Stack', i)
         i = re.sub(r'\sLead', '_Lead', i)
+        i = re.sub(r'\sengine', '_engine', i)
+        i = re.sub(r'Capital\s', 'Capital_', i)
         i = i.split(' ')
         for j in i:
             if len(j) > 1 and j not in ('with', 'and', 'IT', 'to', 'in', 'for', 'or', 'experience', 'of', 'Project'):
