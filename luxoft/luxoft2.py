@@ -13,7 +13,8 @@ today = str(date.today())
 docs = os.listdir('../Temp/luxoft')
 
 for i in docs:
-    f = open('../Temp/luxoft/' + i, 'r')
+    print(i)
+    f = open('../Temp/luxoft/' + i, 'r', encoding='utf-8')
     for vac in re.findall('data-job.*?>', f.read()):
         val = re.findall('{(.*)}', vac)
         if len(val) != 0:
@@ -25,7 +26,3 @@ for i in docs:
         pd.DataFrame({'subtitle': subtitle, 'title': title, 'location': location}).to_csv('./luxoft/source/luxoft' + today + '.csv', encoding='utf-8', header=False, index=False)
     else:
       break
-    
-    print(i)
-
-
